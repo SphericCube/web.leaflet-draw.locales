@@ -5,7 +5,7 @@ Library to add locales to [Leaflet.draw](https://github.com/Leaflet/Leaflet.draw
 ## Installation
 
 ```bash
-npm install --save web.leaflet-draw.locales
+npm install --save sphericcube/web.leaflet-draw.locales
 ```
 
 ## Usage
