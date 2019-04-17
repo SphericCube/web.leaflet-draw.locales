@@ -1,6 +1,11 @@
-(function(window,document,undefined){
+(function (window, document, undefined) {
     L._locals = {};
     L._local = 'en';
+
+    let defaultLocale = {};
+    Object.assign(defaultLocale, L.drawLocal);
+
+    L._locals.default = defaultLocale;
 
     /**
      * Set local
@@ -8,7 +13,17 @@
      * @param local
      * @returns {{}}
      */
-    L.setLocal = (local) => (L._local = local) && (Object.assign(L.drawLocal, L._locals[L._local] || {}));
+    L.setLocal = (local = 'default') => {
+        if (L._locals[local]) {
+            L._local = '' + local;
+        } else {
+            L._local = 'default';
+        }
+
+        L.drawLocal = L._locals[L._local];
+
+        return this;
+    };
 
     /**
      * Get current local
@@ -24,13 +39,13 @@
      * @param {{}} local
      * @returns {*}
      */
-    L.createLocal = ( name , local = {}) => {
+    L.createLocal = (name, local = {}) => {
         let _local = {};
 
         Object.assign(_local, local);
 
-        L._locals[ name ] = _local;
+        L._locals[name] = _local;
 
-        return L._locals[ name ];
+        return L._locals[name];
     };
-}(window,document));
+}(window, document));
