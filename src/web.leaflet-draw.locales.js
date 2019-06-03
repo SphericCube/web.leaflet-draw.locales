@@ -2,7 +2,7 @@
     L._locals = {};
     L._local = 'en';
 
-    let defaultLocale = {};
+    var defaultLocale = {};
     Object.assign(defaultLocale, L.drawLocal);
 
     L._locals.default = defaultLocale;
