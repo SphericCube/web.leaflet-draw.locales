@@ -40,7 +40,7 @@
      * @returns {*}
      */
     L.createLocal = (name, local = {}) => {
-        let _local = {};
+        var _local = {};
 
         Object.assign(_local, local);
 
